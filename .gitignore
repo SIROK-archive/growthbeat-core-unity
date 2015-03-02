@@ -19,4 +19,6 @@
 *.meta
 
 # Unity3D Generated File On Crash Reports
-sysinfo.txt
+sysinfo.tx
+
+bin

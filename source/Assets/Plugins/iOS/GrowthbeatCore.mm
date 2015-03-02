@@ -15,6 +15,6 @@ NSString* NSStringFromCharString(const char* charString) {
     return [NSString stringWithCString:charString encoding:NSUTF8StringEncoding];
 }
 
-extern "C" void growthbeatCoreinitializeWithApplicationId(const char* applicationId, const char* credentialId) {
+extern "C" void initializeWithApplicationId(const char* applicationId, const char* credentialId) {
     [[GrowthbeatCore sharedInstance] initializeWithApplicationId:NSStringFromCharString(applicationId) credentialId:NSStringFromCharString(credentialId)];
 }
