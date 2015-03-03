@@ -9,11 +9,10 @@ public class GrowthbeatCore
 	private static GrowthbeatCore instance = new GrowthbeatCore ();
 
 	#if UNITY_IPHONE
-	[DllImport("__Internal")]
-	private extern void initializeWithApplicationId(string applicationId, string credentialId);
+	[DllImport("__Internal")] static extern void initializeWithApplicationId(string applicationId, string credentialId);
 	#endif
 
-	public static void GetInstance ()
+	public static GrowthbeatCore GetInstance ()
 	{
 		return GrowthbeatCore.instance;
 	}
