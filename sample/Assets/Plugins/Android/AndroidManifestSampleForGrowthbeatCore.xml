@@ -4,16 +4,6 @@
     android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <permission
-        android:name="YOUR_APPLICATION_PACKAGE_NAME.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-
-    <uses-permission android:name="YOUR_APPLICATION_PACKAGE_NAME.permission.C2D_MESSAGE" />
 
     <application
         android:icon="@drawable/app_icon"
@@ -46,24 +36,6 @@
             android:name="com.unity3d.player.VideoPlayer"
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|uiMode|touchscreen" >
         </activity>
-
-        <!-- Don't remove AlertActivity, BroadcastReceiverBridge and meta-data -->
-        <activity
-            android:name="com.growthbeatcore.view.AlertActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:launchMode="singleInstance"
-            android:theme="@android:style/Theme.Translucent" />
-
-        <receiver
-            android:name="com.growthbeatcore.BroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-
-                <category android:name="YOUR_APPLICATION_PACKAGE_NAME" />
-            </intent-filter>
-        </receiver>
 
     </application>
 

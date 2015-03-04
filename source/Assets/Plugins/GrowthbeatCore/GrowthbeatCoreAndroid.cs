@@ -1,18 +1,18 @@
 using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
 
 public class GrowthbeatCoreAndroid {
 
 		private static GrowthbeatCoreAndroid instance = new GrowthbeatCoreAndroid();
 
-		#if UNITY_ANDROID && !UNITY_EDITOR
+		#if UNITY_ANDROID
 			private static AndroidJavaObject growthbeatCore;
 		#endif
 
 		private GrowthbeatCoreAndroid() {
-				#if UNITY_ANDROID && !UNITY_EDITOR
-					using(AndroidJavaClass gbcclass = new AndroidJavaClass( "com.growthbeatCore.GrowthbeatCore" )) {
+				#if UNITY_ANDROID
+					using(AndroidJavaClass gbcclass = new AndroidJavaClass( "com.growthbeat.GrowthbeatCore" )) {
 							growthbeatCore = gbcclass.CallStatic<AndroidJavaObject>("getInstance"); 
 					}
 				#endif
@@ -23,12 +23,12 @@ public class GrowthbeatCoreAndroid {
 		}
 
 		private void PrivateInitialize(string applicationId, string credentialId) {
-				#if UNITY_ANDROID && !UNITY_EDITOR
+				#if UNITY_ANDROID
 					if (growthbeatCore == null)
 						return;
 					AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"); 
 					AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"); 
-					growthbeatCore.Call<AndroidJavaObject>("initialize", activity, applicationId, credentialId);
+					growthbeatCore.Call("initialize", activity, applicationId, credentialId);
 				#endif
 		}
 
