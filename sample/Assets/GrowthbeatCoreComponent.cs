@@ -4,7 +4,7 @@ using System.Collections;
 public class GrowthbeatCoreComponent : MonoBehaviour {
 
 	void Awake () {
-		GrowthbeatCore.GetInstance().Initialize("OyTg8vZd4KTNQDJ5", "3EKydeJ0imxJ5WqS22FJfdVamFLgu7XA");
+		GrowthbeatCore.GetInstance().Initialize("APPLICATION_ID", "CREDENTIAL_ID");
 	}
 
 	void Start () {
